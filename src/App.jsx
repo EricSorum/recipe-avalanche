@@ -4,7 +4,7 @@ import style from './style/App.module.css';
 
 function App() {
   const [num, setNum] = useState(4);
-  const numberList = [4, 12, 16, 32, 64];
+  const numberList = [1, 12, 16, 32, 64];
   return (
     <div className={style.App}>
       <header>

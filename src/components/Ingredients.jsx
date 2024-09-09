@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Recipe from './Recipe';
-import Instructions from './Instructions';
+// import Recipe from './Recipe';
+// import Instructions from './Instructions';
 import style from '../style/Ingredients.module.css';
 
 function Ingredients(props) {
@@ -27,16 +27,19 @@ function Ingredients(props) {
     const data = await api.json();
     setRecipes(data);
   };
+
   useEffect(() => {
     getRecipes();
   }, [ingredient]);
 
   // useEffect(() => {
-  //   const allRecipeCards = document.querySelectorAll('recipeCard');
-  //   allRecipeCards.forEach((card) => {
-  //     const updatedCard = { ...card, disable: false };
-  //     allRecipeCards[allRecipeCards.indexOf(card)] = updatedCard;
-  //   });
+  // const allRecipeCards = document.querySelectorAll('recipeCard');
+  // console.log(allRecipeCards);
+  // allRecipeCards.forEach((card) => {
+  //   card.classList.add('recipeAnimation');
+  //   // const updatedCard = { ...card, disable: false };
+  //   // allRecipeCards[allRecipeCards.indexOf(card)] = updatedCard;
+  // });
   // });
 
   const ingredientList = ['Chicken', 'Beef', 'Pork', 'Fish', 'Pasta', 'Rice', 'Beans', 'Carrots', 'Broccoli', 'Lettuce', 'Peppers', 'Mushrooms'];
@@ -55,7 +58,7 @@ function Ingredients(props) {
         {ingredient}
       </p>
       {/**
-         The buttons below serve as easy, one-click searches for a particular vegetable.
+         The buttons below serve as easy, one-click searches for a particular ingredient.
           */}
       <div className={style.buttonsGrid}>
         {ingredientList.map((ingredientName) => (
@@ -90,9 +93,9 @@ function Ingredients(props) {
               <img src={recipe.image} alt={recipe.title} />
               <div>
                 <p className={style.section}>Ingredients:</p>
-                <Recipe recipeID={recipe} />
+                {/* <Recipe recipeID={recipe} /> */}
                 <p className={style.section}>Instructions:</p>
-                <Instructions recipeID={recipe} />
+                {/* <Instructions recipeID={recipe} /> */}
               </div>
             </div>
           ))
@@ -102,8 +105,9 @@ function Ingredients(props) {
     </div>
   );
 }
+// Set to 1 for testing.
 Ingredients.defaultProps = {
-  num: 4,
+  num: 1,
 };
 Ingredients.propTypes = {
   num: PropTypes.number,

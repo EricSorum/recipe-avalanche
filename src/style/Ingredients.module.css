@@ -45,22 +45,7 @@
   font-weight: 700;
 }
 
-.recipesGrid div.recipeCard {
-  width: 400px;
-  border: 1px solid rgba(100, 100, 100, 0.5);
-  box-shadow: rgba(100, 100, 100, 0.5) 2px 2px 2px;
-  padding: 20px;
-  /* transition: position 2s ease-out; */
-}
 
-/* .recipesGrid div.recipeCard:disabled {
-  position: absolute;
-  top: -100px;
-}
-
-.recipesGrid div.recipeCard:enabled {
-  position: relative;
-} */
 
 form {
   font-size: 1.2rem;
@@ -81,4 +66,31 @@ form {
 
 .section {
   font-weight: 800;
+}
+
+.recipeCard {
+  width: 400px;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  box-shadow: rgba(100, 100, 100, 0.5) 2px 2px 2px;
+  padding: 20px;
+  /* transition: position 2s ease-out; */
+}
+
+.recipeSlide {
+  position: relative;
+  top: -300px;
+}
+
+.recipeAnimation {
+  animation: slideDown 2s linear forwards;
+}
+
+@keyframes slideDown {
+  from {
+    top: -200px;
+  }
+
+  to {
+    top: 0;
+  }
 }
