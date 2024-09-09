@@ -28,7 +28,7 @@ function Recipe(props) {
   return (
     <ul className={style.ingredients}>
       {recipe.map((ingredient) => (
-        <li className={style.bullet}>
+        <li key={ingredient.id} className={style.bullet}>
           <p>
             {ingredient.amount.us.value}
             {' '}
@@ -42,7 +42,7 @@ function Recipe(props) {
   );
 }
 Recipe.defaultProps = {
-  recipeID: 'broccoli',
+  recipeID: 'chicken',
 };
 Recipe.propTypes = {
   recipeID: PropTypes.string,

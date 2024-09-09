@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Recipe from './Recipe';
 import Instructions from './Instructions';
-import style from '../style/Veggies.module.css';
+import style from '../style/Ingredients.module.css';
 
-function Veggies(props) {
+function Ingredients(props) {
   // recipes is the data for each recipe fetched from the API
   const [recipes, setRecipes] = useState([]);
   // ingredients corresponds to the the word(s) the user searches for.
   const [ingredient, setIngredient] = useState('broccoli');
   const { num } = props;
   /*
-   The Veggies component contains most of the app functionality.  The useEffect hook
+   The Ingredients component contains most of the app functionality.  The useEffect hook
    controls the getIngredients function, which fetches data from the spoonacular API.
    This component finds the title and image of each recipe from spoonacular.
    The documentation for this API function may be found here:
@@ -30,6 +30,17 @@ function Veggies(props) {
   useEffect(() => {
     getRecipes();
   }, [ingredient]);
+
+  // useEffect(() => {
+  //   const allRecipeCards = document.querySelectorAll('recipeCard');
+  //   allRecipeCards.forEach((card) => {
+  //     const updatedCard = { ...card, disable: false };
+  //     allRecipeCards[allRecipeCards.indexOf(card)] = updatedCard;
+  //   });
+  // });
+
+  const ingredientList = ['Chicken', 'Beef', 'Pork', 'Fish', 'Pasta', 'Rice', 'Beans', 'Carrots', 'Broccoli', 'Lettuce', 'Peppers', 'Mushrooms'];
+
   /*
    The handler below is commented out since useEffect automatically fetches new recipes
    when the contents of the search bar changes.
@@ -39,7 +50,7 @@ function Veggies(props) {
   return (
     <div className={style.mainColumn}>
       <p className={style.select}>
-        Search recipes by pressing a veggie button:
+        Search recipes by clicking an ingredient:
         <span> </span>
         {ingredient}
       </p>
@@ -47,102 +58,17 @@ function Veggies(props) {
          The buttons below serve as easy, one-click searches for a particular vegetable.
           */}
       <div className={style.buttonsGrid}>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('broccoli');
-          }}
-        >
-          Broccoli
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('carrots');
-          }}
-        >
-          Carrots
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('red pepper');
-          }}
-        >
-          Red Pepper
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('green pepper');
-          }}
-        >
-          Green Pepper
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('cabbage');
-          }}
-        >
-          Cabbage
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('green beans');
-          }}
-        >
-          Green Beans
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('squash');
-          }}
-        >
-          Squash
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('cucumber');
-          }}
-        >
-          Cucumber
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('zucchini');
-          }}
-        >
-          Zucchini
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('tomatoes');
-          }}
-        >
-          Tomatoes
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('sweet potatoes');
-          }}
-        >
-          Sweet Potatoes
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setIngredient('cauliflower');
-          }}
-        >
-          Cauliflower
-        </button>
+        {ingredientList.map((ingredientName) => (
+          <button
+            type="button"
+            onClick={() => {
+              setIngredient(ingredientName);
+            }}
+          >
+            {ingredientName}
+          </button>
+        ))}
+
       </div>
 
       {/*
@@ -156,11 +82,10 @@ function Veggies(props) {
       </form>
 
       <div className={style.recipesGrid}>
-        { /* recipes.map is not a function */}
         {recipes.length > 0 && (
 
           recipes.map((recipe) => (
-            <div key={recipe.id}>
+            <div key={`recipe-key-${recipe.title}`} className={style.recipeCard}>
               <p className={style.title}>{recipe.title}</p>
               <img src={recipe.image} alt={recipe.title} />
               <div>
@@ -177,10 +102,10 @@ function Veggies(props) {
     </div>
   );
 }
-Veggies.defaultProps = {
+Ingredients.defaultProps = {
   num: 4,
 };
-Veggies.propTypes = {
+Ingredients.propTypes = {
   num: PropTypes.number,
 };
-export default Veggies;
+export default Ingredients;
