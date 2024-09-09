@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Ingredients from './components/Ingredients';
+import ChooseRecipes from './components/ChooseRecipes';
 import style from './style/App.module.css';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         ))}
 
       </div>
-      <Ingredients num={num} />
+      <ChooseRecipes num={num} />
     </div>
   );
 }
