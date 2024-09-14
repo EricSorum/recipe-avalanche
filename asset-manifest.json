@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/recipe-avalanche/static/css/main.d2f23698.css",
+    "main.js": "/recipe-avalanche/static/js/main.8af10c67.js",
+    "index.html": "/recipe-avalanche/index.html",
+    "main.d2f23698.css.map": "/recipe-avalanche/static/css/main.d2f23698.css.map",
+    "main.8af10c67.js.map": "/recipe-avalanche/static/js/main.8af10c67.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2f23698.css",
+    "static/js/main.8af10c67.js"
+  ]
+}
