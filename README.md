@@ -1,6 +1,6 @@
 Recipe Avalanche
 
-Use web app here: https://ericsorum.github.io/recipe-avalanche/
+This web app may be used here: https://ericsorum.github.io/recipe-avalanche/
 
 This application uses the spoonacular.com API to search recipes by ingredients. By pressing one of the ingredient buttons, the user gets a list of recipes using that ingredient.
 
