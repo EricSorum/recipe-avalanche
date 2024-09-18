@@ -13,7 +13,7 @@ Each instruction has a "number" and "step" key, which is extracted from each obj
 the array and rendered to the component.
 */
 
-function Instructions({ props = 'chicken' }) {
+function Instructions(props) {
   const [instructions, setInstructions] = useState([]);
   const { recipeID } = props;
   const getInstructions = async () => {

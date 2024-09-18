@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import Ingredients from './Ingredients';
-// import Instructions from './Instructions';
+import Ingredients from './Ingredients';
+import Instructions from './Instructions';
 import style from '../style/ChooseRecipes.module.css';
 
 function ChooseRecipes(props) {
@@ -42,7 +42,7 @@ function ChooseRecipes(props) {
   // });
   // });
 
-  const ingredientList = ['Chicken', 'Beef', 'Pork', 'Fish', 'Pasta', 'Rice', 'Beans', 'Carrots', 'Broccoli', 'Lettuce', 'Peppers', 'Mushrooms'];
+  const ingredientList = ['Chicken', 'Beef', 'Pork', 'Fish', 'Pasta', 'Rice', 'Tofu', 'Carrots', 'Broccoli', 'Lettuce', 'Peppers', 'Mushrooms'];
 
   /*
    The handler below is commented out since useEffect automatically fetches new recipes
@@ -93,9 +93,9 @@ function ChooseRecipes(props) {
               <img src={recipe.image} alt={recipe.title} />
               <div>
                 <p className={style.section}>Ingredients:</p>
-                {/* <Ingredients recipeID={recipe} /> */}
+                <Ingredients recipeID={recipe} />
                 <p className={style.section}>Instructions:</p>
-                {/* <Instructions recipeID={recipe} /> */}
+                <Instructions recipeID={recipe} />
               </div>
             </div>
           ))
