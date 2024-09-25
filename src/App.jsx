@@ -10,7 +10,7 @@ function App() {
       <header>
         <h1>Recipe Avalanche</h1>
       </header>
-      <h2>Pick an ingredient, and we&apos;ll find recipes!</h2>
+      <h2>Generate up to 36 recipes with one click!</h2>
 
       {/*
       The buttons below allow the user to select the numeber of recipes to fetch
