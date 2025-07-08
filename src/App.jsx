@@ -4,13 +4,13 @@ import style from './style/App.module.css';
 
 function App() {
   const [num, setNum] = useState(4);
-  const numberList = [1, 4, 12, 16, 36];
+  const numberList = [1, 4, 8, 12, 16];
   return (
     <div className={style.App}>
       <header>
         <h1>Recipe Avalanche</h1>
       </header>
-      <h2>Generate up to 36 recipes with one click!</h2>
+      <h2>Generate up to 16 recipes with one click!</h2>
 
       {/*
       The buttons below allow the user to select the numeber of recipes to fetch
