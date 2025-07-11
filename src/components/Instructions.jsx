@@ -13,12 +13,12 @@ Each instruction has a "number" and "step" key, which is extracted from each obj
 the array and rendered to the component.
 */
 
-function Instructions(props) {
+function Instructions({recipeID}) {
   const [instructions, setInstructions] = useState([]);
-  const { recipeID } = props;
+  // const { recipeID } = props;
   const getInstructions = async () => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/${recipeID.id}/analyzedInstructions?apiKey=${process.env.REACT_APP_API_KEY}`,
+      `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${process.env.REACT_APP_API_KEY}`,
     );
     const data = await api.json();
     setInstructions(data[0].steps);

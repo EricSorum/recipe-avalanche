@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Ingredients from './Ingredients';
-import Instructions from './Instructions';
+// import Ingredients from './Ingredients';
+// import Instructions from './Instructions';
+import RecipeCard from './RecipeCard';
 import style from '../style/ChooseRecipes.module.css';
 
 function ChooseRecipes(props) {
@@ -32,24 +33,8 @@ function ChooseRecipes(props) {
     getRecipes();
   }, [ingredient]);
 
-  // useEffect(() => {
-  // const allChooseRecipess = document.querySelectorAll('ChooseRecipes');
-  // console.log(allChooseRecipess);
-  // allChooseRecipess.forEach((card) => {
-  //   card.classList.add('recipeAnimation');
-  //   // const updatedCard = { ...card, disable: false };
-  //   // allChooseRecipess[allChooseRecipess.indexOf(card)] = updatedCard;
-  // });
-  // });
-
   const ingredientList = ['Chicken', 'Beef', 'Pork', 'Fish', 'Pasta', 'Rice', 'Tofu', 'Carrots', 'Broccoli', 'Lettuce', 'Peppers', 'Mushrooms'];
 
-  /*
-   The handler below is commented out since useEffect automatically fetches new recipes
-   when the contents of the search bar changes.
-   I have kept it here in case another solution is preferred at some point.
-   */
-  // const handleSubmit = (e) => {e.preventDefault();getRecipes()}
   return (
     <div className={style.mainColumn}>
       <p className={style.select}>
@@ -86,6 +71,16 @@ function ChooseRecipes(props) {
 
       <div className={style.recipesGrid}>
         {recipes.length > 0 && (
+          recipes.map((recipe) => (
+            // <p>{recipe.title}</p>>
+            // This has to be correct v
+            <RecipeCard key={`recipe-key-${recipe.title.replaceAll(" ", "")}`} recipe={recipe} />
+          ))
+        )}
+      </div>
+
+      {/* <div className={style.recipesGrid}>
+        {recipes.length > 0 && (
 
           recipes.map((recipe) => (
             <div key={`recipe-key-${recipe.title}`} className={style.ChooseRecipes}>
@@ -101,7 +96,8 @@ function ChooseRecipes(props) {
           ))
 
         )}
-      </div>
+      </div> */}
+
     </div>
   );
 }

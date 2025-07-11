@@ -12,22 +12,23 @@ From there, the name and US amount value (quantity) and unit of measurement
 is rendered for each ingredient.
 */
 
-function Ingredients(props) {
-  const [recipe, setRecipe] = useState([]);
-  const { recipeID } = props;
+function Ingredients({ recipeID }) {
+  const [ingredients, setIngredients] = useState([]);
+  // const { recipeID } = props;
+  // console.log(recipeID) 
   const getRecipe = async () => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/${recipeID.id}/ingredientWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`,
+      `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`,
     );
     const data = await api.json();
-    setRecipe(data.ingredients);
+    setIngredients(data.ingredients);
   };
   useEffect(() => {
     getRecipe();
   }, []);
   return (
     <ul className={style.ingredients}>
-      {recipe.map((ingredient) => (
+      {ingredients.map((ingredient) => (
         <li key={ingredient.id} className={style.bullet}>
           <p>
             {ingredient.amount.us.value}

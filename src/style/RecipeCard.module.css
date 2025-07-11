@@ -1,0 +1,7 @@
+.RecipeCard {
+  width: 400px;
+  border: 1px solid rgba(100, 100, 100, 0.5);
+  box-shadow: rgba(100, 100, 100, 0.5) 2px 2px 2px;
+  padding: 20px;
+  /* transition: position 2s ease-out; */
+}
