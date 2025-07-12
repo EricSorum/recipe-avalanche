@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-// import Ingredients from './Ingredients';
-// import Instructions from './Instructions';
 import RecipeCard from './RecipeCard';
 import style from '../style/ChooseRecipes.module.css';
 
@@ -73,32 +71,10 @@ function ChooseRecipes(props) {
       <div className={style.recipesGrid}>
         {recipes.length > 0 && (
           recipes.map((recipe) => (
-            // <p>{recipe.title}</p>>
-            // This has to be correct v
             <RecipeCard key={`recipe-key-${recipe.title.replaceAll(" ", "")}`} recipe={recipe} />
           ))
         )}
       </div>
-
-      {/* <div className={style.recipesGrid}>
-        {recipes.length > 0 && (
-
-          recipes.map((recipe) => (
-            <div key={`recipe-key-${recipe.title}`} className={style.ChooseRecipes}>
-              <p className={style.title}>{recipe.title}</p>
-              <img src={recipe.image} alt={recipe.title} />
-              <div>
-                <p className={style.section}>Ingredients:</p>
-                <Ingredients recipeID={recipe} />
-                <p className={style.section}>Instructions:</p>
-                <Instructions recipeID={recipe} />
-              </div>
-            </div>
-          ))
-
-        )}
-      </div> */}
-
     </div>
   );
 }

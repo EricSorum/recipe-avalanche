@@ -14,8 +14,6 @@ is rendered for each ingredient.
 
 function Ingredients({ recipeID }) {
   const [ingredients, setIngredients] = useState([]);
-  // const { recipeID } = props;
-  // console.log(recipeID) 
   const getRecipe = async () => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/${recipeID}/ingredientWidget.json?apiKey=${process.env.REACT_APP_API_KEY}`,

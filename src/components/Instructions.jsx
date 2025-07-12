@@ -26,13 +26,16 @@ function Instructions({recipeID}) {
   useEffect(() => {
     getInstructions();
   }, []);
+
+  const nbsp = "\u00A0"
+
   return (
     <ul>
       {instructions.map((instruction) => (
         <li key={instruction.number} className={style.bullet}>
           <p>
             {instruction.number}
-            .
+            .{nbsp}
             {instruction.step}
           </p>
         </li>
