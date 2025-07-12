@@ -48,6 +48,7 @@ function ChooseRecipes(props) {
       <div className={style.buttonsGrid}>
         {ingredientList.map((ingredientName) => (
           <button
+            key={`ingredient-key-${ingredientName.replaceAll(' ', '')}`}
             type="button"
             onClick={() => {
               setIngredient(ingredientName);
