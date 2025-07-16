@@ -12,6 +12,9 @@ function RecipeCard({ recipe }) {
   const cardRef = useRef(null);
 
   const expandCard = (e) => {
+    // first need to close all other cards.
+    // useRef for recipesGrid, then search all cards and change aria-expanded to false.
+
     const thisEl = e.target.closest("#expandableCard") || e.target;
     const thisAria = thisEl.getAttribute("aria-expanded")
     thisEl.setAttribute("aria-expanded",
@@ -19,9 +22,9 @@ function RecipeCard({ recipe }) {
     )
   }
 
-
   useEffect(() => {
     function handleClickOutside(event) {
+      // here i need to check if I'm clicking in a card that is not aria-expanded=true
       const cardEl = event.target.closest("#expandableCard");
       if (!cardEl) {
         cardRef.current.setAttribute("aria-expanded", "false")
