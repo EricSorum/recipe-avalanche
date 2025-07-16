@@ -8,6 +8,7 @@ function ChooseRecipes(props) {
   const [recipes, setRecipes] = useState([]);
   // ingredients corresponds to the the word(s) the user searches for.
   const [ingredient, setIngredient] = useState('broccoli');
+  const [counter, setCounter] = useState(0);
   const { num } = props;
   /*
    The Ingredients component contains most of the app functionality.  The useEffect hook
@@ -26,6 +27,17 @@ function ChooseRecipes(props) {
     const data = await api.json();
     setRecipes(data);
   };
+
+  useEffect(() => {
+    let timeout;
+    if (counter < recipes.length) {
+      timeout = setTimeout(() => {
+        setCounter((prev) => prev + 1);
+      }, 200);
+    }
+    return () => timeout && clearTimeout(timeout);    
+
+  }, [counter, recipes.length]);
 
   useEffect(() => {
     getRecipes();
@@ -69,11 +81,10 @@ function ChooseRecipes(props) {
       </form>
 
       <div className={style.recipesGrid}>
-        {recipes.length > 0 && (
-          recipes.map((recipe) => (
+          {recipes.slice(0, counter).map((recipe) => (
             <RecipeCard key={`recipe-key-${recipe.title.replaceAll(" ", "")}`} recipe={recipe} />
-          ))
-        )}
+          ))}
+        
       </div>
     </div>
   );
