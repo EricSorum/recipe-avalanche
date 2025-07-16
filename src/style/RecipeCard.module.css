@@ -16,11 +16,14 @@
 
 .RecipeCard[aria-expanded="true"] {
   position: fixed;
-  top: 50%;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
   transition: translate 1s ease-in-out;
+  overflow-y:scroll;
+  max-height: 80%;
+  width: 80%;
 }
 
 .RecipeCard[aria-expanded="false"] {
