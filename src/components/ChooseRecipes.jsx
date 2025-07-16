@@ -27,14 +27,16 @@ function ChooseRecipes(props) {
     const data = await api.json();
     setRecipes(data);
   };
-
+  let interval = 1;
   useEffect(() => {
     let timeout;
+
     if (counter < recipes.length) {
       timeout = setTimeout(() => {
         setCounter((prev) => prev + 1);
-      }, 200);
+      }, 200*interval);
     }
+    interval += 1;
     return () => timeout && clearTimeout(timeout);    
 
   }, [counter, recipes.length]);
