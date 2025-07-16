@@ -7,16 +7,25 @@ import style from '../style/RecipeCard.module.css';
 function RecipeCard({ recipe }) {
   const { image, id: recipeID, title } = recipe;
 
+
+  const expandCard = (e) => {
+    const thisEl = e.target;
+    const thisAria = thisEl.getAttribute("aria-expanded")
+    thisEl.setAttribute("aria-expanded",
+      thisAria === "true" ? "false" : "true"
+    )
+  }
+
   return (
-    <div  className={style.RecipeCard}>
+    <button type="button" className={style.RecipeCard} aria-expanded="false" onClick={expandCard}>
       <p>{title}</p>
       <img src={image} alt={title} />
-      <div>
+      <div className={style.ingredients}>
         <p className={style.section}>Ingredients:</p>
         <Ingredients recipeID={recipeID} />
         <Instructions recipeID={recipeID} />
       </div>
-    </div>
+    </button>
   )
 }
 
