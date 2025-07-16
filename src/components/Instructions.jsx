@@ -21,7 +21,9 @@ function Instructions({recipeID}) {
       `https://api.spoonacular.com/recipes/${recipeID}/analyzedInstructions?apiKey=${process.env.REACT_APP_API_KEY}`,
     );
     const data = await api.json();
-    setInstructions(data[0].steps);
+    if (data[0].steps.length) {
+      setInstructions(data[0].steps);
+    }
   };
   useEffect(() => {
     getInstructions();
