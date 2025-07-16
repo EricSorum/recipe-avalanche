@@ -2,6 +2,40 @@
   width: 400px;
   border: 1px solid rgba(100, 100, 100, 0.5);
   box-shadow: rgba(100, 100, 100, 0.5) 2px 2px 2px;
-  padding: 20px;
+  padding: 40px 20px;
+  background: white;
+  animation: 1s ease-in avalanche;
+  /* border-radius: 50%; */
+
   /* transition: position 2s ease-out; */
+}
+
+.ingredients {
+  display: none;
+}
+
+.RecipeCard[aria-expanded="true"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: translate 1s ease-in-out;
+}
+
+.RecipeCard[aria-expanded="false"] {
+  position: static;
+}
+
+.RecipeCard[aria-expanded="true"] .ingredients {
+  display: block;
+}
+
+@keyframes avalanche {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
