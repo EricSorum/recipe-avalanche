@@ -6,7 +6,7 @@
   background: white;
   animation: 1s ease-in avalanche;
   /* border-radius: 50%; */
-
+  cursor: pointer;
   /* transition: position 2s ease-out; */
 }
 
