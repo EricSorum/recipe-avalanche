@@ -1,17 +1,27 @@
 .RecipeCard {
+  position: relative;
   width: 400px;
   border: 1px solid rgba(100, 100, 100, 0.5);
   box-shadow: rgba(100, 100, 100, 0.5) 2px 2px 2px;
   padding: 40px 20px;
   background: white;
   animation: 1s ease-in avalanche;
-  /* border-radius: 50%; */
+  border-radius: 5%;
   cursor: pointer;
-  /* transition: position 2s ease-out; */
 }
 
 .ingredients {
   display: none;
+}
+
+.RecipeCard[aria-expanded="false"]:hover {
+  background: radial-gradient(
+    circle at top center,
+    hsl(100 50% 95%),   
+    hsl(120 55% 85%),   
+    hsl(140 50% 85%),   
+    hsl(90 60% 65%)     
+  );
 }
 
 .RecipeCard[aria-expanded="true"] {
@@ -24,6 +34,7 @@
   overflow-y:scroll;
   max-height: 80%;
   width: 80%;
+  border-radius: 0;
 }
 
 .RecipeCard[aria-expanded="false"] {

@@ -25,12 +25,18 @@
   font-size: 1.5rem;
 }
 
-.buttonsGrid>button:hover {
-  background-color: rgba(100, 255, 50, 1);
-}
-
 .buttonsGrid>button:active {
   box-shadow: inset rgba(100, 100, 100, 0.5) 2px 2px 2px;
+}
+
+.buttonsGrid>button:hover {
+     background: radial-gradient(
+    circle at top center,
+    hsl(100 50% 95%),   
+    hsl(120 55% 85%),   
+    hsl(140 50% 65%),   
+    hsl(90 60% 40%)     
+  );
 }
 
 .recipesGrid {
@@ -45,13 +51,13 @@
   font-weight: 700;
 }
 
-
-
 form {
   font-size: 1.2rem;
   border: solid black 2px;
   border-radius: 3%;
   padding: 20px;
+  background-color: #fafafa;
+  color: black;
 }
 
 #custom {
@@ -61,7 +67,8 @@ form {
 }
 
 .select {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px black; 
 }
 
 .section {

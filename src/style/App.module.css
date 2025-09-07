@@ -24,6 +24,10 @@ h1 {
   font-weight: 900;
 }
 
+h2 {
+  text-shadow: 1px 1px black; 
+}
+
 .buttonDiv {
   display: flex;
   justify-content: center;
@@ -39,11 +43,29 @@ h1 {
   background-color: #fafafa;
 }
 
+.numButton:hover {
+  background: radial-gradient(
+  circle at top center,
+  hsl(100 50% 95%),   
+  hsl(120 55% 85%),   
+  hsl(140 50% 85%),   
+  hsl(90 60% 65%)     
+);
+}
+
 .numButton:active {
   color: rgba(100, 100, 100, 0.8);
   box-shadow: inset black 2px 2x 2x;
+    background: radial-gradient(
+    circle at top center,
+    hsl(100 50% 95%),   
+    hsl(120 55% 85%),   
+    hsl(140 50% 85%),   
+    hsl(90 60% 65%)     
+  );
 }
 
 .select {
   font-size: 1.2rem;
+  text-shadow: 1px 1px black; 
 }
