@@ -19,7 +19,7 @@ function App() {
       */}
 
       <p className={style.select}>
-        Select number of recipe suggestions:&nbsp;
+        Select number of recipes to get:&nbsp;
         {num}
       </p>
       <div className={style.buttonDiv}>
