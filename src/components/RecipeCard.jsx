@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+// import DownloadPdf from './DownloadPdf';
 import Ingredients from "./Ingredients";
 import Instructions from "./Instructions";
 import style from '../style/RecipeCard.module.css';
-
-
 
 function RecipeCard({ recipe }) {
   const { image, id: recipeID, title } = recipe;
@@ -28,7 +27,6 @@ function RecipeCard({ recipe }) {
       const cardEl = event.target.closest("#expandableCard");
       if (!cardEl) {
         cardRef.current.setAttribute("aria-expanded", "false")
-        
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -41,6 +39,7 @@ function RecipeCard({ recipe }) {
     <button type="button" ref={cardRef} id="expandableCard" className={style.RecipeCard} aria-expanded="false" onClick={expandCard}>
       <p>{title}</p>
       <img src={image} alt={title} />
+      {/* <DownloadPdf /> */}
       <div className={style.ingredients}>
         <p className={style.section}>Ingredients:</p>
         <Ingredients recipeID={recipeID} />
@@ -49,8 +48,6 @@ function RecipeCard({ recipe }) {
     </button>
   )
 }
-
-
 
 RecipeCard.defaultProps = {
   recipe: {
