@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/recipe-avalanche/static/css/main.9f4f70e8.css",
-    "main.js": "/recipe-avalanche/static/js/main.cb9dd0bc.js",
+    "main.css": "/recipe-avalanche/static/css/main.44abef19.css",
+    "main.js": "/recipe-avalanche/static/js/main.4ea63852.js",
+    "static/media/background.jpg": "/recipe-avalanche/static/media/background.d400b6220023902b7eb9.jpg",
     "index.html": "/recipe-avalanche/index.html",
-    "main.9f4f70e8.css.map": "/recipe-avalanche/static/css/main.9f4f70e8.css.map",
-    "main.cb9dd0bc.js.map": "/recipe-avalanche/static/js/main.cb9dd0bc.js.map"
+    "main.44abef19.css.map": "/recipe-avalanche/static/css/main.44abef19.css.map",
+    "main.4ea63852.js.map": "/recipe-avalanche/static/js/main.4ea63852.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f4f70e8.css",
-    "static/js/main.cb9dd0bc.js"
+    "static/css/main.44abef19.css",
+    "static/js/main.4ea63852.js"
   ]
 }
